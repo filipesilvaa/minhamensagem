@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coração Pulsante</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            flex-direction: column;
+        }
+
+        .heart {
+            width: 150px; /* Aumentei o tamanho do coração */
+            height: 150px; /* Aumentei o tamanho do coração */
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: beat 1s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 150px; /* Aumentei o tamanho do coração */
+            height: 150px; /* Aumentei o tamanho do coração */
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -75px; /* Ajustei a posição */
+            left: 0;
+        }
+
+        .heart::after {
+            left: 75px; /* Ajustei a posição */
+            top: 0;
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+        }
+
+        .text {
+            margin-top: 70px;
+            font-size: 50px; /* Aumentei o tamanho da frase */
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <div class="text">Você é meu tudo!</div>
+</body>
+</html>
